@@ -51,7 +51,8 @@ function cartReducer(state, action)   // goal of this cartreducer is to update t
             ...existingCartItem,
             quantity : existingCartItem.quantity - 1,
         };
-        updatedItems[existingCartItem] = updatedItem;
+       // updatedItems[existingCartItem] = updatedItem;
+       updatedItems[existingCartIndex] = updatedItem;
        }
        return {...state, items: updatedItems};
     }
