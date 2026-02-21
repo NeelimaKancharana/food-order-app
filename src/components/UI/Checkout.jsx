@@ -19,7 +19,7 @@ export default function Checkout()
     const cartCtx = useContext(CartContext);
     const userProgressCtx = useContext(UserProgressContext);
 
-    const {data,error,sendRequest,clearData} = useHttp('http://localhost:3000/orders', requestConfig);
+    const {data,error,sendRequest,clearData} = useHttp('http://localhost:8080/orders', requestConfig);
 
     const cartTotal = cartCtx.items.reduce((totalPrice,item) => totalPrice + item.quantity * item.price ,0);
 
@@ -91,7 +91,7 @@ export default function Checkout()
                 <Input label="City" type="text" id="city" />
            </div>
 
-           {error && <Error title="Failed to submit the order" mesage={error} />}
+           {error && <Error title="Failed to submit the order" message={error} />}
             <p className="modal-actions">{actions}</p>
         </form>
        </Modal>
